@@ -4,7 +4,6 @@ import Features from '@/components/Features';
 import HowItWorks from '@/components/HowItWorks';
 import Pricing from '@/components/Pricing';
 import CTABlock from '@/components/CTABlock';
-import Contacts from '@/components/Contacts';
 import CompanyDetails from '@/components/CompanyDetails';
 import Footer from '@/components/Footer';
 import MobileActionBar from '@/components/MobileActionBar';
@@ -21,7 +20,6 @@ const Index = () => {
           <HowItWorks />
           <Pricing />
           <CTABlock />
-          <Contacts />
           <CompanyDetails />
         </main>
         <Footer />

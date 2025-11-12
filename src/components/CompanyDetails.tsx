@@ -4,16 +4,16 @@ const CompanyDetails = () => {
   const { t } = useLanguage();
 
   const details = [
-    { labelKey: 'details.name', value: 'Betreuungsdienst Liebevolle Hände GmbH' },
-    { labelKey: 'details.inn', value: '1234567890' },
-    { labelKey: 'details.address', value: 'Musterstraße 123, 12345 Berlin, Deutschland' },
-    { labelKey: 'details.account', value: 'DE89 3704 0044 0532 0130 00' },
-    { labelKey: 'details.ogrn', value: '1234567890123' },
-    { labelKey: 'details.bank', value: 'Deutsche Bank AG' },
-    { labelKey: 'details.bik', value: 'DEUTDEFF' },
-    { labelKey: 'details.inn_bank', value: '9876543210' },
-    { labelKey: 'details.corr', value: 'DE89 3704 0044 0000 0000 00' },
-    { labelKey: 'details.bank_address', value: 'Bankstraße 1, 10115 Berlin, Deutschland' },
+    { labelKey: 'details.name', value: 'ИНДИВИДУАЛЬНЫЙ ПРЕДПРИНИМАТЕЛЬ ДЕМЬЯНОВА ЕЛЕНА НИКОЛАЕВНА' },
+    { labelKey: 'details.inn', value: '310263445438' },
+    { labelKey: 'details.address', value: '308598, РОССИЯ, БЕЛГОРОДСКАЯ ОБЛ, БЕЛГОРОДСКИЙ Р-Н, С ЧЕРЕМОШНОЕ, УЛ НАГОРНАЯ, Д 55' },
+    { labelKey: 'details.ogrn', value: '325310000001892' },
+    { labelKey: 'details.account', value: '40802810800007744407' },
+    { labelKey: 'details.bank', value: 'АО «ТБанк»' },
+    { labelKey: 'details.bik', value: '044525974' },
+    { labelKey: 'details.inn_bank', value: '7710140679' },
+    { labelKey: 'details.corr', value: '30101810145250000974' },
+    { labelKey: 'details.bank_address', value: '127287, г. Москва, ул. Хуторская 2-я, д. 38А, стр. 26' },
   ];
 
   return (

@@ -1,5 +1,5 @@
 import { useLanguage } from '@/contexts/LanguageContext';
-import { Phone, Layout, HelpCircle, Users, Server } from 'lucide-react';
+import { Phone, Layout, HelpCircle, Users, Server, Shield } from 'lucide-react';
 
 const Features = () => {
   const { t } = useLanguage();
@@ -30,16 +30,21 @@ const Features = () => {
       titleKey: 'feature5.title',
       descKey: 'feature5.desc',
     },
+    {
+      icon: Shield,
+      titleKey: 'feature6.title',
+      descKey: 'feature6.desc',
+    },
   ];
 
   return (
     <section id="features" className="section-padding bg-background">
-      <div className="container mx-auto max-w-6xl">
+      <div className="container mx-auto max-w-12xl">
         <div className="text-center mb-16 animate-fade-in">
           <h2 className="text-primary mb-4">{t('features.title')}</h2>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-10">
           {features.map((feature, index) => {
             const Icon = feature.icon;
             return (
@@ -55,9 +60,13 @@ const Features = () => {
                   <h3 className="text-xl font-bold text-foreground">
                     {t(feature.titleKey)}
                   </h3>
-                  <p className="text-base text-muted-foreground leading-relaxed">
-                    {t(feature.descKey)}
-                  </p>
+                  <div className="text-sm text-muted-foreground leading-relaxed space-y-2">
+                    {t(feature.descKey).split('\n\n').map((paragraph, idx) => (
+                      <p key={idx} className={idx === 0 ? 'font-medium text-foreground' : ''}>
+                        {paragraph}
+                      </p>
+                    ))}
+                  </div>
                 </div>
               </div>
             );

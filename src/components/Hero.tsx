@@ -13,7 +13,7 @@ const Hero = () => {
             {t('hero.title')}
           </h1>
           
-          <p className="text-xl md:text-2xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
+          <p className="text-xl md:text-2xl text-muted-foreground max-w-5xl mx-auto leading-relaxed">
             {t('hero.subtitle')}
           </p>
 
