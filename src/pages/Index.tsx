@@ -1,13 +1,33 @@
-// Update this page (the content is just a fallback if you fail to update the page)
+import Header from '@/components/Header';
+import Hero from '@/components/Hero';
+import Features from '@/components/Features';
+import HowItWorks from '@/components/HowItWorks';
+import Pricing from '@/components/Pricing';
+import CTABlock from '@/components/CTABlock';
+import Contacts from '@/components/Contacts';
+import CompanyDetails from '@/components/CompanyDetails';
+import Footer from '@/components/Footer';
+import MobileActionBar from '@/components/MobileActionBar';
+import { LanguageProvider } from '@/contexts/LanguageContext';
 
 const Index = () => {
   return (
-    <div className="flex min-h-screen items-center justify-center bg-background">
-      <div className="text-center">
-        <h1 className="mb-4 text-4xl font-bold">Welcome to Your Blank App</h1>
-        <p className="text-xl text-muted-foreground">Start building your amazing project here!</p>
+    <LanguageProvider>
+      <div className="min-h-screen">
+        <Header />
+        <main>
+          <Hero />
+          <Features />
+          <HowItWorks />
+          <Pricing />
+          <CTABlock />
+          <Contacts />
+          <CompanyDetails />
+        </main>
+        <Footer />
+        <MobileActionBar />
       </div>
-    </div>
+    </LanguageProvider>
   );
 };
 
