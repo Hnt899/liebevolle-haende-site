@@ -6,8 +6,7 @@ import { componentTagger } from "lovable-tagger";
 // https://vitejs.dev/config/
 export default defineConfig(({ mode }) => ({
   // Для GitHub Pages: если репозиторий не в корне, укажите base как "/название-репозитория/"
-  // Если репозиторий называется "liebevolle-haende-site", раскомментируйте следующую строку:
-  // base: process.env.NODE_ENV === 'production' ? '/liebevolle-haende-site/' : '/',
+  base: process.env.NODE_ENV === 'production' ? '/liebevolle-haende-site/' : '/',
   server: {
     host: "::",
     port: 8080,
