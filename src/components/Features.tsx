@@ -1,50 +1,38 @@
 import { useLanguage } from '@/contexts/LanguageContext';
-import { Phone, Layout, HelpCircle, Users, Server, Shield } from 'lucide-react';
+import { DollarSign, Gauge, FileCheck } from 'lucide-react';
 
 const Features = () => {
   const { t } = useLanguage();
 
   const features = [
     {
-      icon: Phone,
-      titleKey: 'feature1.title',
-      descKey: 'feature1.desc',
+      icon: DollarSign,
+      titleKey: 'target1.title',
+      descKey: 'target1.desc',
     },
     {
-      icon: Layout,
-      titleKey: 'feature2.title',
-      descKey: 'feature2.desc',
+      icon: Gauge,
+      titleKey: 'target2.title',
+      descKey: 'target2.desc',
     },
     {
-      icon: HelpCircle,
-      titleKey: 'feature3.title',
-      descKey: 'feature3.desc',
-    },
-    {
-      icon: Users,
-      titleKey: 'feature4.title',
-      descKey: 'feature4.desc',
-    },
-    {
-      icon: Server,
-      titleKey: 'feature5.title',
-      descKey: 'feature5.desc',
-    },
-    {
-      icon: Shield,
-      titleKey: 'feature6.title',
-      descKey: 'feature6.desc',
+      icon: FileCheck,
+      titleKey: 'target3.title',
+      descKey: 'target3.desc',
     },
   ];
 
   return (
-    <section id="features" className="section-padding bg-background">
+    <section id="target" className="section-padding bg-background">
       <div className="container mx-auto max-w-12xl">
         <div className="text-center mb-16 animate-fade-in">
-          <h2 className="text-primary mb-4">{t('features.title')}</h2>
+          <h2 className="text-primary mb-4">{t('target.title')}</h2>
+          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+            {t('target.desc')}
+          </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-10">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-10">
           {features.map((feature, index) => {
             const Icon = feature.icon;
             return (
@@ -60,13 +48,9 @@ const Features = () => {
                   <h3 className="text-xl font-bold text-foreground">
                     {t(feature.titleKey)}
                   </h3>
-                  <div className="text-sm text-muted-foreground leading-relaxed space-y-2">
-                    {t(feature.descKey).split('\n\n').map((paragraph, idx) => (
-                      <p key={idx} className={idx === 0 ? 'font-medium text-foreground' : ''}>
-                        {paragraph}
-                      </p>
-                    ))}
-                  </div>
+                  <p className="text-sm text-muted-foreground leading-relaxed">
+                    {t(feature.descKey)}
+                  </p>
                 </div>
               </div>
             );

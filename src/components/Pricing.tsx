@@ -40,23 +40,23 @@ const Pricing = () => {
           {plans.map((plan, index) => (
             <div
               key={index}
-              className="relative bg-white dark:bg-card rounded-xl shadow-lg p-8 lg:p-10 animate-fade-in flex flex-col min-h-[600px]"
+              className="relative bg-white rounded-xl shadow-lg p-8 lg:p-10 animate-fade-in flex flex-col min-h-[600px]"
               style={{ animationDelay: `${index * 100}ms` }}
             >
               <div className="flex-1 space-y-6">
                 <div className="text-center">
-                  <h3 className="text-3xl font-bold text-foreground mb-3">
+                  <h3 className="text-3xl font-bold text-slate-900 mb-3">
                     {t(plan.titleKey)}
                   </h3>
-                  <p className="text-base text-foreground mb-6">
+                  <p className="text-base text-slate-700 mb-6">
                     {t(plan.descKey)}
                   </p>
                 </div>
 
                 <div className="flex items-center justify-center">
-                  <div className="inline-flex items-center space-x-2 bg-blue-100 dark:bg-blue-950/50 px-4 py-2.5 rounded-lg">
-                    <Clock size={18} className="text-blue-700 dark:text-blue-400" />
-                    <span className="text-sm font-medium text-blue-700 dark:text-blue-300">
+                  <div className="inline-flex items-center space-x-2 bg-blue-100 px-4 py-2.5 rounded-lg">
+                    <Clock size={18} className="text-blue-700" />
+                    <span className="text-sm font-medium text-blue-700">
                       {t(plan.timeKey)}
                     </span>
                   </div>
@@ -69,11 +69,11 @@ const Pricing = () => {
                     .map((feature, featureIndex) => (
                       <div key={featureIndex} className="flex items-start space-x-3">
                         <div className="flex-shrink-0 mt-0.5">
-                          <div className="w-5 h-5 rounded-full bg-blue-100 dark:bg-blue-950/50 flex items-center justify-center">
-                            <Check size={14} className="text-blue-700 dark:text-blue-400" />
+                          <div className="w-5 h-5 rounded-full bg-blue-100 flex items-center justify-center">
+                            <Check size={14} className="text-blue-700" />
                           </div>
                         </div>
-                        <span className="text-base text-foreground leading-relaxed">{feature}</span>
+                        <span className="text-base text-slate-700 leading-relaxed">{feature}</span>
                       </div>
                     ))}
                 </div>

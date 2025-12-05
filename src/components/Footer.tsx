@@ -1,21 +1,14 @@
 import { useLanguage } from '@/contexts/LanguageContext';
 
 const Footer = () => {
-  const { language, setLanguage, t } = useLanguage();
+  const { t } = useLanguage();
 
   const navItems = [
     { key: 'nav.home', href: '#hero' },
-    { key: 'nav.features', href: '#features' },
+    { key: 'nav.why', href: '#why' },
     { key: 'nav.how', href: '#how-it-works' },
-    { key: 'nav.pricing', href: '#pricing' },
+    { key: 'nav.reviews', href: '#reviews' },
     { key: 'nav.contacts', href: '#contacts' },
-    { key: 'nav.details', href: '#details' },
-  ];
-
-  const languages: Array<{ code: 'ru' | 'de' | 'tr'; label: string }> = [
-    { code: 'ru', label: 'RU' },
-    { code: 'de', label: 'DE' },
-    { code: 'tr', label: 'TR' },
   ];
 
   return (
@@ -25,10 +18,10 @@ const Footer = () => {
           {/* Logo & Description */}
           <div>
             <div className="text-2xl font-bold text-primary mb-4">
-              Liebevolle Hände
+              DA Motors
             </div>
             <p className="text-sm text-muted-foreground leading-relaxed">
-              Профессиональный уход за пожилыми людьми с заботой и вниманием.
+              {t('footer.desc')}
             </p>
           </div>
 
@@ -48,24 +41,13 @@ const Footer = () => {
             </nav>
           </div>
 
-          {/* Language Switcher */}
+          {/* Legal */}
           <div>
-            <h3 className="font-bold text-foreground mb-4">Язык</h3>
-            <div className="flex items-center space-x-2">
-              {languages.map((lang) => (
-                <button
-                  key={lang.code}
-                  onClick={() => setLanguage(lang.code)}
-                  className={`px-4 py-2 text-sm font-medium rounded-lg transition-all ${
-                    language === lang.code
-                      ? 'bg-primary text-primary-foreground'
-                      : 'bg-muted text-muted-foreground hover:bg-muted/80'
-                  }`}
-                >
-                  {lang.label}
-                </button>
-              ))}
-            </div>
+            <h3 className="font-bold text-foreground mb-4">{t('footer.legal')}</h3>
+            <p className="text-sm text-muted-foreground leading-relaxed">
+              Официальный договор в РФ<br />
+              Полное юридическое сопровождение
+            </p>
           </div>
         </div>
 

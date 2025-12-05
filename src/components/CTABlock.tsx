@@ -1,6 +1,7 @@
 import { Button } from '@/components/ui/button';
 import { useLanguage } from '@/contexts/LanguageContext';
-import { Send, Mail, CheckCircle2 } from 'lucide-react';
+import { Send, Mail, MessageCircle, CheckCircle2 } from 'lucide-react';
+import { toast } from 'sonner';
 
 const CTABlock = () => {
   const { t } = useLanguage();
@@ -11,13 +12,25 @@ const CTABlock = () => {
     t('cta.point3'),
   ];
 
+  const email = 'arturfurt9@gmail.com';
+
+  const handleEmailClick = async (e: React.MouseEvent) => {
+    e.preventDefault();
+    try {
+      await navigator.clipboard.writeText(email);
+      toast.success('Почта скопирована');
+    } catch (err) {
+      toast.error('Не удалось скопировать почту');
+    }
+  };
+
   return (
     <section id="cta" className="section-padding gradient-bg">
       <div className="container mx-auto max-w-5xl">
         <div className="text-center space-y-8 text-white animate-fade-in">
           <h2 className="text-white">{t('cta.title')}</h2>
           
-          <p className="text-xl md:text-2xl text-white/90 max-w-3xl mx-auto leading-relaxed">
+          <p className="text-xl md:text-2xl text-white/90 max-w-3xl mx-auto leading-relaxed text-left">
             {t('cta.subtitle')}
           </p>
 
@@ -43,14 +56,22 @@ const CTABlock = () => {
             </Button>
             <Button 
               size="lg" 
-              variant="outline"
-              className="bg-white/10 hover:bg-white/20 text-white border-2 border-white/50 hover:border-white px-8 py-6 text-lg backdrop-blur-sm"
+              className="bg-green-600 hover:bg-green-700 text-white font-semibold px-8 py-6 text-lg shadow-xl hover:shadow-2xl hover:scale-105 transition-all"
               asChild
             >
-              <a href="mailto:arturfurt9@gmail.com">
-                <Mail className="mr-2" size={20} />
-                {t('cta.email')}
+              <a href="https://wa.me/79853656294" target="_blank" rel="noopener noreferrer">
+                <MessageCircle className="mr-2" size={20} />
+                {t('cta.whatsapp')}
               </a>
+            </Button>
+            <Button 
+              size="lg" 
+              variant="outline"
+              className="bg-white/10 hover:bg-white/20 text-white border-2 border-white/50 hover:border-white px-8 py-6 text-lg backdrop-blur-sm"
+              onClick={handleEmailClick}
+            >
+              <Mail className="mr-2" size={20} />
+              {t('cta.email')}
             </Button>
           </div>
         </div>

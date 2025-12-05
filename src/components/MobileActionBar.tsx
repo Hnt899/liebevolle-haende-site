@@ -13,7 +13,7 @@ const MobileActionBar = () => {
             className="bg-primary hover:bg-primary/90 text-primary-foreground font-semibold"
             asChild
           >
-            <a href="tel:+491234567890">
+            <a href="tel:+79991234567">
               <Phone size={20} className="mr-2" />
               {t('contacts.call')}
             </a>

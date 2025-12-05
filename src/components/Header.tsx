@@ -1,25 +1,17 @@
-import { Button } from '@/components/ui/button';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { Menu, X } from 'lucide-react';
 import { useState } from 'react';
 
 const Header = () => {
-  const { language, setLanguage, t } = useLanguage();
+  const { t } = useLanguage();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   const navItems = [
     { key: 'nav.home', href: '#hero' },
-    { key: 'nav.features', href: '#features' },
+    { key: 'nav.why', href: '#why' },
     { key: 'nav.how', href: '#how-it-works' },
-    { key: 'nav.pricing', href: '#pricing' },
+    { key: 'nav.reviews', href: '#reviews' },
     { key: 'nav.contacts', href: '#contacts' },
-    { key: 'nav.details', href: '#details' },
-  ];
-
-  const languages: Array<{ code: 'ru' | 'de' | 'tr'; label: string }> = [
-    { code: 'ru', label: 'RU' },
-    { code: 'de', label: 'DE' },
-    { code: 'tr', label: 'TR' },
   ];
 
   return (
@@ -29,7 +21,7 @@ const Header = () => {
           {/* Logo */}
           <div className="flex-shrink-0">
             <a href="#hero" className="text-2xl font-bold text-primary hover:text-secondary transition-colors">
-              Liebevolle Hände
+              DA Motors
             </a>
           </div>
 
@@ -45,28 +37,6 @@ const Header = () => {
               </a>
             ))}
           </nav>
-
-          {/* Language Switcher & CTA */}
-          <div className="hidden lg:flex items-center space-x-4">
-            <div className="flex items-center space-x-1 bg-muted rounded-lg p-1">
-              {languages.map((lang) => (
-                <button
-                  key={lang.code}
-                  onClick={() => setLanguage(lang.code)}
-                  className={`px-3 py-1.5 text-sm font-medium rounded-md transition-all ${
-                    language === lang.code
-                      ? 'bg-primary text-primary-foreground'
-                      : 'text-muted-foreground hover:text-foreground'
-                  }`}
-                >
-                  {lang.label}
-                </button>
-              ))}
-            </div>
-            <Button className="btn-cta" asChild>
-              <a href="#contacts">{t('btn.request')}</a>
-            </Button>
-          </div>
 
           {/* Mobile Menu Button */}
           <button
@@ -92,28 +62,6 @@ const Header = () => {
                 </a>
               ))}
             </nav>
-            <div className="mt-4 pt-4 border-t border-border space-y-4">
-              <div className="flex items-center justify-center space-x-2">
-                {languages.map((lang) => (
-                  <button
-                    key={lang.code}
-                    onClick={() => setLanguage(lang.code)}
-                    className={`px-4 py-2 text-sm font-medium rounded-lg transition-all ${
-                      language === lang.code
-                        ? 'bg-primary text-primary-foreground'
-                        : 'bg-muted text-muted-foreground'
-                    }`}
-                  >
-                    {lang.label}
-                  </button>
-                ))}
-              </div>
-              <Button className="btn-cta w-full" asChild>
-                <a href="#contacts" onClick={() => setMobileMenuOpen(false)}>
-                  {t('btn.request')}
-                </a>
-              </Button>
-            </div>
           </div>
         )}
       </div>
