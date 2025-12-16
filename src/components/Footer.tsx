@@ -53,9 +53,6 @@ const Footer = () => {
 
         <div className="pt-8 border-t border-border space-y-4">
           <p className="text-sm text-muted-foreground text-center">
-            {t('footer.hosting')}
-          </p>
-          <p className="text-sm text-muted-foreground text-center">
             {t('footer.copyright')}
           </p>
         </div>

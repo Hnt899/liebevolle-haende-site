@@ -1,6 +1,5 @@
 import { useLanguage } from '@/contexts/LanguageContext';
-import { Check, Clock, Search, Palette, Code, Zap, ArrowRight, BarChart, BookOpen, Globe, Layers, CheckCircle } from 'lucide-react';
-import { Button } from '@/components/ui/button';
+import { Check, Clock, Search, Palette, Code, Zap, BarChart, BookOpen, Globe, Layers, CheckCircle } from 'lucide-react';
 
 const Pricing = () => {
   const { t } = useLanguage();
@@ -167,26 +166,6 @@ const Pricing = () => {
           })}
         </div>
 
-        {/* CTA Button */}
-        <div className="mt-16 text-center animate-fade-in">
-          <Button 
-            size="lg"
-            className="bg-primary hover:bg-primary/90 text-primary-foreground px-8 py-6 text-lg shadow-xl hover:shadow-2xl hover:scale-105 transition-all"
-            asChild
-          >
-            <a href="#cta">
-              {t('pricing.contact')}
-              <ArrowRight className="ml-2" size={20} />
-            </a>
-          </Button>
-        </div>
-
-        {/* Note */}
-        <div className="mt-12 text-center">
-          <p className="text-sm text-muted-foreground">
-            {t('pricing.note')}
-          </p>
-        </div>
       </div>
     </section>
   );
