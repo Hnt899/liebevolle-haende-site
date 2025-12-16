@@ -21,7 +21,7 @@ const Header = () => {
           {/* Logo */}
           <div className="flex-shrink-0">
             <a href="#hero" className="text-2xl font-bold text-primary hover:text-secondary transition-colors">
-              DA Motors
+              АРКУС
             </a>
           </div>
 

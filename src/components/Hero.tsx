@@ -6,10 +6,10 @@ const Hero = () => {
   const { t } = useLanguage();
 
   const goals = [
-    { icon: TrendingUp, label: t('hero.goal1'), value: 'трафика' },
-    { icon: Palette, label: t('hero.goal2'), value: 'React/TS' },
-    { icon: Clock, label: t('hero.goal3'), value: 'срок' },
-    { icon: CheckCircle, label: t('hero.goal4'), value: 'win-win' },
+    { icon: TrendingUp, label: t('hero.goal1'), value: 'Продукты' },
+    { icon: Palette, label: t('hero.goal2'), value: 'Доверие' },
+    { icon: Clock, label: t('hero.goal3'), value: 'Заявки' },
+    { icon: CheckCircle, label: t('hero.goal4'), value: 'Рост' },
   ];
 
   return (
@@ -24,14 +24,6 @@ const Hero = () => {
             <p className="text-xl md:text-2xl text-white/90 max-w-5xl mx-auto">
               {t('hero.subtitle')}
             </p>
-            
-            <p className="text-2xl md:text-3xl font-bold text-accent max-w-4xl mx-auto">
-              {t('hero.direction')}
-            </p>
-            
-            <p className="text-xl md:text-2xl text-white/80 max-w-4xl mx-auto">
-              {t('hero.company')}
-            </p>
           </div>
           
           <p className="text-lg md:text-xl text-white/90 max-w-5xl mx-auto leading-relaxed pt-4">
@@ -40,8 +32,8 @@ const Hero = () => {
 
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-6">
             <Button className="bg-accent hover:bg-accent/90 text-accent-foreground text-lg" size="lg" asChild>
-              <a href="#contacts">
-                Обсудить проект
+              <a href="#cta">
+                {t('hero.cta1')}
                 <ArrowRight className="ml-2" size={20} />
               </a>
             </Button>
@@ -52,7 +44,7 @@ const Hero = () => {
               asChild
             >
               <a href="#why">
-                Узнать подробнее
+                {t('hero.cta2')}
               </a>
             </Button>
           </div>

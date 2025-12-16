@@ -12,7 +12,8 @@ const Pricing = () => {
       timeKey: 'plan1.time',
       features: ['plan1.feature1', 'plan1.feature2', 'plan1.feature3'],
       buttonColor: 'bg-slate-900 hover:bg-slate-800',
-      price: '95.000',
+      price: '150.000',
+      pricePrefix: 'От',
     },
     {
       titleKey: 'plan2.title',
@@ -20,7 +21,8 @@ const Pricing = () => {
       timeKey: 'plan2.time',
       features: ['plan2.feature1', 'plan2.feature2', 'plan2.feature3'],
       buttonColor: 'bg-purple-600 hover:bg-purple-700',
-      price: '170.000',
+      price: '300.000',
+      pricePrefix: 'От',
     },
     {
       titleKey: 'plan3.title',
@@ -28,7 +30,8 @@ const Pricing = () => {
       timeKey: 'plan3.time',
       features: ['plan3.feature1', 'plan3.feature2', 'plan3.feature3', 'plan3.feature4'],
       buttonColor: 'bg-slate-900 hover:bg-slate-800',
-      price: '250.000',
+      price: '400.000',
+      pricePrefix: 'От',
     },
   ];
 
@@ -53,6 +56,7 @@ const Pricing = () => {
                   </h3>
                   <div className="mb-4 min-h-[4rem] flex items-center justify-center">
                     <p className="text-4xl font-bold text-primary">
+                      {plan.pricePrefix && <span className="text-2xl text-slate-600 mr-1">{plan.pricePrefix}</span>}
                       {plan.price} <span className="text-3xl">₽</span>
                     </p>
                   </div>

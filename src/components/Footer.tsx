@@ -18,7 +18,7 @@ const Footer = () => {
           {/* Logo & Description */}
           <div>
             <div className="text-2xl font-bold text-primary mb-4">
-              DA Motors
+              АРКУС
             </div>
             <p className="text-sm text-muted-foreground leading-relaxed">
               {t('footer.desc')}
@@ -45,7 +45,7 @@ const Footer = () => {
           <div>
             <h3 className="font-bold text-foreground mb-4">{t('footer.legal')}</h3>
             <p className="text-sm text-muted-foreground leading-relaxed">
-              Официальный договор в РФ<br />
+              Официальный договор<br />
               Полное юридическое сопровождение
             </p>
           </div>
