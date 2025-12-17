@@ -8,7 +8,6 @@ import CTABlock from '@/components/CTABlock';
 import Reviews from '@/components/Reviews';
 import Contacts from '@/components/Contacts';
 import Footer from '@/components/Footer';
-import MobileActionBar from '@/components/MobileActionBar';
 import { LanguageProvider } from '@/contexts/LanguageContext';
 
 const Index = () => {
@@ -27,7 +26,6 @@ const Index = () => {
           <Contacts />
         </main>
         <Footer />
-        <MobileActionBar />
       </div>
     </LanguageProvider>
   );

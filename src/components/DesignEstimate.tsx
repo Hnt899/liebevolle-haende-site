@@ -89,21 +89,21 @@ const DesignEstimate = () => {
     <section id="design-estimate" className="section-padding bg-muted/30">
       <div className="container mx-auto max-w-7xl px-4">
         {/* Header */}
-        <div className="text-center mb-16 animate-fade-in">
-          <h2 className="text-primary mb-4 text-3xl md:text-4xl font-bold">{t('estimate.title')}</h2>
-          <p className="text-xl text-white max-w-3xl mx-auto mb-8">
+        <div className="text-center mb-8 md:mb-16 animate-fade-in">
+          <h2 className="text-primary mb-3 md:mb-4 text-2xl sm:text-3xl md:text-4xl font-bold">{t('estimate.title')}</h2>
+          <p className="text-base sm:text-lg md:text-xl text-white max-w-3xl mx-auto mb-6 md:mb-8 px-4">
             {t('estimate.subtitle')}
           </p>
           
           {/* Total Price Card */}
-          <div className="inline-flex items-center gap-4 bg-gradient-to-r from-primary/10 via-primary/5 to-primary/10 rounded-2xl shadow-xl p-8 border-2 border-primary/20">
-            <div className="flex items-center gap-3">
-              <div className="w-16 h-16 rounded-full bg-gradient-to-br from-primary to-primary/80 flex items-center justify-center shadow-lg">
-                <CheckCircle2 size={32} className="text-white" />
+          <div className="inline-flex items-center gap-3 md:gap-4 bg-gradient-to-r from-primary/10 via-primary/5 to-primary/10 rounded-xl md:rounded-2xl shadow-xl p-4 md:p-8 border-2 border-primary/20 mx-4 md:mx-0">
+            <div className="flex items-center gap-2 md:gap-3">
+              <div className="w-12 h-12 md:w-16 md:h-16 rounded-full bg-gradient-to-br from-primary to-primary/80 flex items-center justify-center shadow-lg flex-shrink-0">
+                <CheckCircle2 size={24} className="md:w-8 md:h-8 text-white" />
               </div>
               <div className="text-left">
-                <p className="text-sm text-white mb-1">{t('estimate.total.label')}</p>
-                <p className="text-4xl md:text-5xl font-bold text-primary">
+                <p className="text-xs md:text-sm text-white mb-1">{t('estimate.total.label')}</p>
+                <p className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-primary">
                   {totalPrice} ₽
                 </p>
               </div>
@@ -112,7 +112,7 @@ const DesignEstimate = () => {
         </div>
 
         {/* Estimate Items */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-12">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 md:gap-6">
           {estimateItems.map((item, index) => {
             const Icon = item.icon;
             return (
@@ -121,38 +121,58 @@ const DesignEstimate = () => {
                 className="relative animate-fade-in"
                 style={{ animationDelay: `${index * 100}ms` }}
               >
-                <div className="relative bg-white/80 backdrop-blur-md rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 p-6 border border-white/50 h-full">
-                  <div className="flex items-start justify-between mb-4">
-                    <div className="flex items-center gap-4">
-                      <div className={`w-14 h-14 rounded-xl bg-gradient-to-br ${item.gradient} flex items-center justify-center shadow-md flex-shrink-0`}>
-                        <Icon size={24} className="text-white" />
-                      </div>
-                      <div className="flex-1">
-                        <h3 className="text-xl font-bold text-slate-900 mb-1">
+                <div className="relative bg-white/80 backdrop-blur-md rounded-xl md:rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 p-4 md:p-6 border border-white/50 h-full">
+                  {/* Top section: Icon, Title, Price */}
+                  <div className="flex items-start gap-3 md:gap-4 mb-3 md:mb-4">
+                    <div className={`w-12 h-12 md:w-14 md:h-14 rounded-lg md:rounded-xl bg-gradient-to-br ${item.gradient} flex items-center justify-center shadow-md flex-shrink-0`}>
+                      <Icon size={20} className="md:w-6 md:h-6 text-white" />
+                    </div>
+                    <div className="flex-1 min-w-0">
+                      <div className="flex items-start justify-between gap-2 mb-1 md:mb-0">
+                        <h3 className="text-lg md:text-xl font-bold text-slate-900">
                           {t(item.titleKey)}
                         </h3>
-                        <p className="text-sm text-slate-900 leading-relaxed">
-                          {t(item.descKey)}
+                        <p className="text-lg md:text-2xl lg:text-3xl font-bold text-slate-900 flex-shrink-0">
+                          {item.price} ₽
                         </p>
                       </div>
-                    </div>
-                    <div className="text-right flex-shrink-0 ml-4">
-                      <p className="text-2xl md:text-3xl font-bold text-slate-900">
-                        {item.price} ₽
-                      </p>
+                      {/* Description for items without sub-items - desktop: aligned with title */}
+                      {!item.items && (
+                        <p className="hidden md:block text-sm text-slate-900 leading-relaxed mt-2">
+                          {t(item.descKey)}
+                        </p>
+                      )}
                     </div>
                   </div>
 
+                  {/* Description for items without sub-items - mobile only: starts under icon */}
+                  {!item.items && (
+                    <div className="pl-[5px] md:hidden">
+                      <p className="text-xs text-slate-900 leading-relaxed">
+                        {t(item.descKey)}
+                      </p>
+                    </div>
+                  )}
+
+                  {/* Description for items with sub-items - desktop: aligned with title */}
+                  {item.items && (
+                    <p className="hidden md:block text-sm text-slate-900 leading-relaxed mt-2">
+                      {t(item.descKey)}
+                    </p>
+                  )}
+
                   {/* Sub-items */}
                   {item.items && (
-                    <div className="mt-4 pt-4 border-t border-slate-200/50 space-y-2">
+                    <div className="mt-3 md:mt-4 pt-3 md:pt-4 border-t border-slate-200/50 space-y-3 md:space-y-2">
                       {item.items.map((subItem, subIndex) => (
-                        <div key={subIndex} className="flex items-center justify-between text-sm">
-                          <span className="text-slate-900 flex items-center gap-2">
-                            <div className={`w-1.5 h-1.5 rounded-full bg-gradient-to-br ${item.gradient}`}></div>
-                            {t(subItem.key)}
-                          </span>
-                          <span className="font-semibold text-slate-900">{subItem.price} ₽</span>
+                        <div key={subIndex} className="space-y-1 md:space-y-0 md:flex md:items-center md:justify-between md:gap-2">
+                          <div className="flex items-start gap-2 text-xs md:text-sm flex-1">
+                            <div className={`w-1.5 h-1.5 rounded-full bg-gradient-to-br ${item.gradient} flex-shrink-0 mt-1.5 md:mt-0`}></div>
+                            <span className="text-slate-900 break-words">{t(subItem.key)}</span>
+                          </div>
+                          <div className="pl-3.5 md:pl-0">
+                            <span className="font-semibold text-slate-900 text-xs md:text-sm">{subItem.price} ₽</span>
+                          </div>
                         </div>
                       ))}
                     </div>
@@ -161,22 +181,6 @@ const DesignEstimate = () => {
               </div>
             );
           })}
-        </div>
-
-        {/* Summary */}
-        <div className="bg-white/80 backdrop-blur-md rounded-2xl shadow-xl p-8 border-2 border-white/50 animate-fade-in">
-          <div className="flex flex-col md:flex-row items-center justify-between gap-6">
-            <div className="flex-1">
-              <h3 className="text-2xl font-bold text-slate-900 mb-2">{t('estimate.summary.title')}</h3>
-              <p className="text-slate-900">{t('estimate.summary.desc')}</p>
-            </div>
-            <div className="text-center md:text-right">
-              <p className="text-sm text-slate-900 mb-2">{t('estimate.summary.total')}</p>
-              <p className="text-4xl md:text-5xl font-bold text-primary">
-                {totalPrice} ₽
-              </p>
-            </div>
-          </div>
         </div>
       </div>
     </section>
