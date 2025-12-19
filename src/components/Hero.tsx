@@ -18,10 +18,6 @@ const Hero = () => {
               </Badge>
             </div>
             
-            <h1 className="text-white max-w-5xl mx-auto text-4xl md:text-5xl lg:text-6xl font-bold leading-tight">
-              {t('hero.title')}
-            </h1>
-            
             <p className="text-xl md:text-2xl text-white/90 max-w-4xl mx-auto leading-relaxed">
               {t('hero.subtitle')}
             </p>
