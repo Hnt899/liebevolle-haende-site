@@ -5,10 +5,10 @@ const Footer = () => {
 
   const navItems = [
     { key: 'nav.home', href: '#hero' },
-    { key: 'nav.why', href: '#why' },
-    { key: 'nav.how', href: '#how-it-works' },
-    { key: 'nav.reviews', href: '#reviews' },
-    { key: 'nav.contacts', href: '#contacts' },
+    { key: 'nav.what', href: '#why' },
+    { key: 'nav.packages', href: '#pricing' },
+    { key: 'nav.scope', href: '#how-it-works' },
+    { key: 'nav.timeline', href: '#timeline' },
   ];
 
   return (
@@ -18,7 +18,7 @@ const Footer = () => {
           {/* Logo & Description */}
           <div>
             <div className="text-2xl font-bold text-primary mb-4">
-              АРКУС
+              MVP App
             </div>
             <p className="text-sm text-muted-foreground leading-relaxed">
               {t('footer.desc')}

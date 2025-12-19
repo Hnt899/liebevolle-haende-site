@@ -8,9 +8,10 @@ const Header = () => {
 
   const navItems = [
     { key: 'nav.home', href: '#hero' },
-    { key: 'nav.why', href: '#why' },
-    { key: 'nav.how', href: '#how-it-works' },
-    { key: 'nav.reviews', href: '#reviews' },
+    { key: 'nav.what', href: '#why' },
+    { key: 'nav.packages', href: '#pricing' },
+    { key: 'nav.scope', href: '#how-it-works' },
+    { key: 'nav.timeline', href: '#timeline' },
     { key: 'nav.contacts', href: '#contacts' },
   ];
 
@@ -21,7 +22,7 @@ const Header = () => {
           {/* Logo */}
           <div className="flex-shrink-0">
             <a href="#hero" className="text-2xl font-bold text-primary hover:text-secondary transition-colors">
-              АРКУС
+              MVP App
             </a>
           </div>
 
